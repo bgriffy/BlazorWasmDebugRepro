@@ -15,6 +15,8 @@ jobs:
 
     - name: Publish application
       run: dotnet publish src/WasmDebugIssue/WasmDebugIssue.csproj -c Release
+      with:
+        dotnet-version: 6.0.x
     
     # base href url value should be changed so that resources like CSS and scripts can load properly. 
     - name: Rewrite base href

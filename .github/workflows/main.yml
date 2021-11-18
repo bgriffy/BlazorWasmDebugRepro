@@ -1,6 +1,6 @@
 name: Deploy Blazor WASM to GitHub Page
 env:
-  PUBLISH_DIR: bin/Release/net5.0/publish/wwwroot
+  PUBLISH_DIR: src/WasmDebugIssue/bin/Release/net6.0/publish/
 
 # Controls when the action will run
 on:
@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Publish application
-      run: dotnet publish -c Release
+      run: dotnet publish src/WasmDebugIssue/WasmDebugIssue.csproj -c Release
     
     # base href url value should be changed so that resources like CSS and scripts can load properly. 
     - name: Rewrite base href
